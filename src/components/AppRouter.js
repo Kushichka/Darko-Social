@@ -1,24 +1,29 @@
 import { Routes, Route } from "react-router-dom"
-import Chat from "../pages/Chat";
+import Registration from "../pages/Registration";
 import Login from "../pages/Login";
+import Home from '../pages/Home'
+import Profile from '../pages/Profile'
 
-const AppRouter = ({ user }) => {
-    return user ?
+const AppRouter = ({ isLogged, setIsLogged }) => {
+    return isLogged ?
         (
             <Routes>
-                <Route path='/' element={<Chat />} />
-                <Route path='/Chat' element={<Chat />} />
-                <Route path='*' element={<Chat />} />
+                <Route path='/' element={<Profile />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='*' element={<Profile />} />
             </Routes>
         )
         :
         (
             <Routes>
-                <Route path='/' element={<Login />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='*' element={<Login />} />
+                <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login setIsLogged={setIsLogged} />} />
+                <Route path='/registration' element={<Registration />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='*' element={<Home />} />
             </Routes>
-        )
+        );
 }
 
 export default AppRouter;

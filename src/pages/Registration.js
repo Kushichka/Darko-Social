@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { signIn } from "../Auth/signIn";
+import { signUp } from "../Auth/signUp";
 
-const Login = ({setIsLogged}) => {
+const Registration = () => {
 
-    const [emailValue, setEmailValue] = useState('');
     const [passValue, setPassValue] = useState('');
-
+    const [emailValue, setEmailValue] = useState('');
     return (
         <>
-            <h1>Sign In</h1>
+            <h1>Sign Up</h1>
             <form>
                 <input
                     type="email"
@@ -22,10 +21,10 @@ const Login = ({setIsLogged}) => {
                     value={passValue}
                     onChange={(e) => { setPassValue(e.target.value) }}
                 />
-                <button onClick={(e) => signIn(e, emailValue, passValue, setIsLogged)}>Sign In</button>
+                <button onClick={(e) => signUp(e, emailValue, passValue)}>Sign Up</button>
             </form>
         </>
     );
 }
 
-export default Login;
+export default Registration;
