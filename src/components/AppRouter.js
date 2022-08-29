@@ -3,6 +3,7 @@ import Registration from "../pages/Registration";
 import Login from "../pages/Login";
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
+import { Counter } from "../pages/Counter";
 
 const AppRouter = ({ isLogged, setIsLogged }) => {
     return isLogged ?
@@ -18,6 +19,7 @@ const AppRouter = ({ isLogged, setIsLogged }) => {
         (
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/counter' element={<Counter />} />
                 <Route path='/login' element={<Login setIsLogged={setIsLogged} />} />
                 <Route path='/registration' element={<Registration />} />
                 <Route path='/home' element={<Home />} />
