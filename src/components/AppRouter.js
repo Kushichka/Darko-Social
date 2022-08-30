@@ -3,7 +3,7 @@ import Registration from "../pages/Registration";
 import Login from "../pages/Login";
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
-import { Counter } from "../pages/Counter";
+import Counter from "../pages/Counter";
 
 const AppRouter = ({ isLogged, setIsLogged }) => {
     return isLogged ?
