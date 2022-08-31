@@ -1,5 +1,6 @@
+
 import { useSelector, useDispatch } from "react-redux";
-import { inc, dec } from '../redux/actions';
+import { inc, dec, ent, val } from '../redux/actions';
 
 const Counter = () => {
 
@@ -9,15 +10,22 @@ const Counter = () => {
   return (
     <div>
       <div>
+        <input 
+          type="text" 
+          onChange={(e) => dispatch(val(e.target.value))}
+        />
         <button
-          aria-label="Increment value"
+          onClick={() => dispatch(ent())}
+        >
+          Enter
+        </button>
+        <button
           onClick={() => dispatch(inc())}
         >
           Increment
         </button>
-        <span>{counter}</span>
+        <span style={{margin: 10}}>{counter}</span>
         <button
-          aria-label="Decrement value"
           onClick={() => dispatch(dec())}
         >
           Decrement
